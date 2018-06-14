@@ -102,7 +102,7 @@ environments:
     development:
         dataSource:
             dbCreate: update #create-drop
-            url: jdbc:postgresql://localhost:5433/MercadoExpress
+            url: jdbc:postgresql://localhost:25565/MercadoExpress
     test:
         dataSource:
             dbCreate: update
