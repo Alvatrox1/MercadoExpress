@@ -35,6 +35,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
                 <li class="nav-item">
                     <a class="nav-link" href="${createLink(uri: '/Compra')}">Compra</a>
                 </li>
@@ -53,9 +54,29 @@
                     <li class="nav-item">
                         <a class="nav-link" href="${createLink(uri: '/TipoEnvio')}">Tipos de envio</a>
                     </li>
-                <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="${createLink(uri: '/')}">Inicio</a>
                     </li>
+                </sec:ifAnyGranted>
+                <sec:ifNotLoggedIn>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${createLink(uri: '/')}">Inicio</a>
+                    </li>
+                </sec:ifNotLoggedIn>
+                <sec:ifAnyGranted roles="ROLE_USUARIO">
+                <li class="nav-item">
+                    <a class="nav-link" href="${createLink(uri: '/Compra/')}">Compra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${createLink(uri: '/CarritoCompra')}">carrito de compras</a>
+                </li>
+                  <li class="nav-item">
+                        <a class="nav-link" href="${createLink(uri: '/Articulo')}">Articulo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${createLink(uri: '/')}">Inicio</a>
+                    </li>
+                </sec:ifAnyGranted>
             </ul>
         </div>
     </nav>
