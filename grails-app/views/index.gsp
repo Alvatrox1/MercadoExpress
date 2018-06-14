@@ -2,44 +2,33 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 
-    <style type="text/css">
+    <style>
         footer{
             position: fixed;
         }
 
+        body {
+            background: #f7f7f9;
+        }
+
     </style>
-    <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 </head>
 <body>
-    <div id="content" role="main">
-        <section class="row colset-2-its">
+    <br>
+    <center>
+        <div id="content" role="main">
+                <form action="Bienvenida" action="index" method="POST" id="loginForm" class="ccsform" autocomplete="off">
+                    <p>
+                        <g:link controller="bienvenida" action="index">
+                            <input type="submit" name="ingresar" value="Ingresar" />
+                        </g:link> 
+                    </p>
+                </form>
+        </div>
+    </center>
 
-
-            <br><br><br><br><br><br><br><br><br><br>
-        </section>
-    </div>
-    <p>
-    <sec:ifNotLoggedIn>
-    <div align="right">
-        <form action="mercadoexpress/login/aunthenticate" method="POST" id="loginForm" class="ccsform" autocomplete="off">
-        <p>
-            <label for="username">Nombre del usuario:</label>
-            <input type="text" class="text_" name="username" id="username">
-        </p>
-        <p>
-            <label for="password">Contraseña:</label>
-            <input type="password" class="text_" name="password" id="password">
-        </p>
-        <p>
-        <g:link controller="bienvenida" action="index">
-            <input type="submit" name="ingresar"/>
-        </g:link> 
-        </p>
-        </form>
-    </div>
-    </sec:ifNotLoggedIn>
-    </p>
+    <br><br><br><br><br><br><br><br>
 </body>
 </html>

@@ -14,9 +14,9 @@
 
     <style>
         body {
-            background: #E6E6E6;
             width: 100%;
             height: 100%;
+            background: #f7f7f9;
         }
         footer {
             background: #CEF6F5;
@@ -57,6 +57,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="${createLink(uri: '/')}">Inicio</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${request.getContextPath()}/logoff">Cerrar Sesion</a>
+                    </li>
+
                 </sec:ifAnyGranted>
                 <sec:ifNotLoggedIn>
                     <li class="nav-item">
